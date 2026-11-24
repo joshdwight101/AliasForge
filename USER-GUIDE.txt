@@ -1,0 +1,49 @@
+ALIAS FORGE USER GUIDE
+Version 1.0.1 · Joshua Dwight
+
+Alias Forge manages the Bash aliases and functions in ~/.bash_aliases.
+Use it from your regular user account.
+
+GET STARTED
+
+From the project folder, run bash install.sh, then open Alias Forge from the Ubuntu application menu. The installer requests administrator access to install dependencies.
+
+CREATE OR CHANGE A COMMAND
+
+1. Click + Alias for a shorthand command or + Function for a reusable Bash function. To edit an existing managed command, select it in the Commands list.
+2. Give it a name that starts with a letter or underscore. Use letters, digits, and underscores.
+3. For an alias such as ll, enter the command ls -alF. For a function, enter its body. Alias Forge supplies the function declaration and braces.
+4. Click Add Command or Update Command to stage the edit. Use Validate to check Bash syntax, then Apply Changes to save. Apply creates a safety backup when an aliases file already exists.
+5. Open a new Bash terminal to use the saved commands. In an existing terminal, run the following command or use File → Copy Source Command.
+
+    source ~/.bash_aliases
+
+EDIT THE WHOLE FILE
+
+Use Raw file to edit the complete ~/.bash_aliases, including commands created outside Alias Forge. Click Update Raw File, then Apply Changes. Leave the managed block markers intact if you want those commands to remain in the Commands list.
+
+To remove a managed command, select it, click Delete Command, and confirm. Apply Changes saves the removal. Reloading the aliases file in an existing shell can leave removed definitions active there. Open a fresh shell to check the result.
+
+BACK UP OR RESTORE
+
+• Backup opens a save dialog. Keep the suggested timestamped name and folder or choose your own. It copies the aliases file currently on disk.
+• The default folder is ~/.local/share/alias-forge/backups. Apply Changes also writes a timestamped safety backup there when an aliases file already exists.
+• Restore opens the backup picker. Select a backup and click Review Backup. Use the All files filter if you used a custom filename.
+• Confirm Restore to replace ~/.bash_aliases. Alias Forge backs up the current file first when one exists, reloads the editor, and discards staged or unsaved edits. Apply or copy edits you want to keep before restoring.
+• File → Open Backup Folder opens the default folder. File → Refresh from Disk reloads external changes and discards the editor draft after confirmation.
+
+IF AN EDIT OR RESTORE SEEMS MISSING
+
+• If you just edited a command, click Add Command, Update Command, or Update Raw File to stage it, then click Apply Changes.
+• If Apply reports an external edit, copy any staged work you want to keep before using Refresh from Disk.
+• If the editor shows the expected commands after applying or restoring, start a fresh Bash terminal to verify them. An older terminal can still hold definitions from before the change.
+
+Bash validation checks syntax. Review the contents of a backup before sourcing it, because Bash executes top-level commands when it loads the file.
+
+DESKTOP SHORTCUT
+
+File → Install Desktop Shortcut creates or replaces the Alias Forge desktop launcher. If your desktop asks for permission to open it, right-click the shortcut and choose Allow Launching.
+
+APPLICATION MENU
+
+File → Install in Application Menu creates or refreshes this app’s launcher in the Ubuntu application menu.
